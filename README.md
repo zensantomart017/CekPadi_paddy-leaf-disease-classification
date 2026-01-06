@@ -103,9 +103,9 @@ Silakan gunakan dan kembangkan lebih lanjut dengan tetap mencantumkan atribusi y
 
 ## 👨‍💻 Pengembang
 
-**Wika Romauli Siregar**/n
-**Lasro P. N. Tamba**/n
-**Santo Martogi Simangunsong**/n
+**Wika Romauli Siregar**\n
+**Lasro P. N. Tamba**\n
+**Santo Martogi Simangunsong**\n
 D3 Teknologi Informasi
 Institut Teknologi Del
 Fokus: Machine Learning, Computer Vision, Mobile Application Development
@@ -115,5 +115,6 @@ Fokus: Machine Learning, Computer Vision, Mobile Application Development
 ## 🌾 Penutup
 
 CekPadi diharapkan dapat menjadi langkah awal menuju pemanfaatan teknologi **Artificial Intelligence** dalam mendukung pertanian modern, khususnya dalam mendeteksi dan menangani penyakit tanaman padi secara lebih cepat dan akurat.
+
 
 
