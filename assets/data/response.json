@@ -1,0 +1,116 @@
+[
+    {
+        "id":2,
+        "diseases":true,
+        "name":"Blas Daun",
+        "labelsName":"leaf_blast",
+        "description":"Blas daun pada daun padi ditandai dengan adanya bercak berbentuk belah ketupat atau spindle, dengan pusat bercak berwarna kelabu keputihan dan tepi berwarna coklat atau keunguan. Pada infeksi awal, bercak biasanya kecil dan berwarna hijau keabu-abuan, lalu meluas membentuk pola khas seperti mata ikan. Jika infeksi berat terjadi, bercak dapat menyatu dan menyebabkan sebagian besar permukaan daun mengering.",
+        "prevention":[
+            "Perendaman bibit  di dalam ember dengan menggunakan air yang dicampur Fungsida",
+            "Rendam bibit selama 2-3 hari, dan keringkan bibit selama 7 hari",
+            "Semprotkan Fungisida setelah 2 minggu",
+            "Keringkan lahan.",
+            "Pengendalian penggunaan pupuk urea",
+            "Penambahan K-Sel pada tanaman."
+        ],
+        "treatment":[
+            "Topsin",
+            "Metarizep",
+            "Amistar Top"
+        ]
+    },
+    
+    {
+        "id":1,
+        "diseases":true,
+        "name":"Hawar Daun Bakteri",
+        "labelsName":"bacterial_leaf_blight",
+        "description":"Hawar daun bakteri atau sering dikenal sebagai kresek pada daun padi umumnya ditandai dengan gejala awal berupa ujung daun yang menguning dan secara bertahap mengering ke arah pangkal sehingga daun tampak layu dan menggulung.",
+        "prevention":[
+            "Perendaman bibit di dalam ember dengan menggunakan air yang dicampur bakterisida.",
+            "Rendam bibit selama 2-3 hari, lalu keringkan bibit selama 7 hari.",
+            "Semprotkan bakterisida setelah 2 minggu.",
+            "Keringkan lahan.",
+            "Pengendalian penggunaan pupuk urea.",
+            "Penambahan K-Sel pada tanaman."
+        ],
+        "treatment":[
+            "Nordox",
+            "Kuproxat",
+            "Amistar Top"
+        ]
+    }, 
+    
+    {
+        "id":3,
+        "diseases":true,
+        "name":"Bercak Coklat",
+        "labelsName":"brown_spot",
+        "description":"BBercak coklat pada daun padi ditandai dengan bintik kecil berwarna coklat tua atau keabu-abuan yang kemudian berkembang menjadi bercak bulat atau oval dengan pusat berwarna abu-abu terang dan tepi berwarna coklat gelap. Pada daun yang terinfeksi parah, bercak dapat menyatu dan menyebabkan daun mengering sebagian atau seluruhnya.",
+        "prevention":[
+            "Perendaman bibit  di dalam ember dengan menggunakan air yang dicampur Fungsida",
+            "Rendam bibit selama 2-3 hari, dan keringkan bibit selama 7 hari",
+            "Semprotkan Fungisida setelah 2 minggu",
+            "Keringkan lahan.",
+            "Pengendalian penggunaan pupuk urea",
+            "Penambahan K-Sel pada tanaman."
+        ],
+        "treatment":[
+            "Topsin",
+            "Metarizep",
+            "Amistar Top"
+        ]
+    }, 
+ 
+    {
+        "id":4,
+        "diseases":true,
+        "name":"Hawar Pelepah Daun",
+        "labelsName":"sheath_blight",
+        "description":"Hawar pelepah pada daun padi ditandai dengan munculnya bercak lonjong berwarna hijau keabu-abuan atau coklat muda pada bagian pelepah daun bagian bawah yang lembab. Seiring waktu, bercak tersebut meluas menjadi coklat tua dengan tepi tidak teratur, dan dapat menyebar ke daun bagian atas hingga menyebabkan pelepah membusuk. Jika daun terkena infeksi berat dapat menyebabkan daun mengering, batang mudah rebah.",
+        "prevention":[
+            "Perendaman bibit  di dalam ember dengan menggunakan air yang dicampur Bakterisida",
+            "Rendam bibit selama 2-3 hari, dan keringkan bibit selama 7 hari",
+            "Semprotkan bakterisida setelah 2 minggu.",
+            "Keringkan lahan.",
+            "Pengendalian penggunaan pupuk urea",
+            "Penambahan K-Sel pada tanaman."
+        ],
+        "treatment":[
+            "Nordox",
+            "Kuproxat",
+            "Amistar Top"
+        ]
+    }, 
+    
+    {
+        "id":5,
+        "diseases":true,
+        "name":"Bercak Daun Coklat Sempit",
+        "labelsName":"narrow_brown_spot",
+        "description":"Bercak daun coklat sempit pada daun padi ditandai dengan munculnya bercak sempit memanjang sejajar dengan tulang daun, berwarna coklat keunguan atau keabu-abuan dengan tepi yang lebih gelap. Pada kondisi yang ringan, bercak hanya tampak seperti garis memanjang, tetapi pada tingkat yang sudah parah, bercak dapat menyatu sehingga menyebabkan daun tampak mengering sebagian besar.",
+        "prevention":[
+            "Perendaman bibit di dalam ember dengan menggunakan air yang dicampur bakterisida.",
+            "Rendam bibit selama 2-3 hari, dan keringkan bibit selama 7 hari",
+            "Semprotkan bakterisida setelah 2 minggu.",
+            "Keringkan lahan.",
+            "Pengendalian penggunaan pupuk urea",
+            "Penambahan K-Sel pada tanaman."
+        ],
+        "treatment":[
+            "Nordox",
+            "Kuproxat",
+            "Amistar Top"
+        ]
+    }, 
+ 
+    {
+        "id":6,
+        "diseases":false,
+        "name":"Daun Sehat",
+        "labelsName":"healthy",
+        "description":"Daun sehat dapat dilihat secara visual, daun sehat berwarna hijau segar, mengkilap, serta tidak terdapat bercak, luka, atau perubahan warna, struktur tulang yang tampak jelas dan sejajar. Daun sehat juga memiliki tekstur lentur namun kuat, tidak menggulung ataupun layu, serta mampu berdiri tegak mengikuti arah pertumbuhan batang.",
+        "prevention":[],
+        "treatment":[]
+    }
+]
