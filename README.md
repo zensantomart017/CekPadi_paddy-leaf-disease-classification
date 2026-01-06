@@ -73,10 +73,12 @@ Proyek ini menggunakan arsitektur **EfficientNetV2**, yang merupakan pengembanga
 ---
 
 ## 📱 Tampilan Aplikasi
-![CekPadi Mobile App](docs/images/splash_screen.jpeg)
-![CekPadi Mobile App](docs/images/home.jpeg)
-![CekPadi Mobile App](docs/images/loading_analys.jpeg)
-![CekPadi Mobile App](docs/images/result.jpeg)
+<p align="center">
+<img src="docs/images/splash_screen.jpeg" width="300" />
+<img src="docs/images/home.jpeg" width="300" />
+<img src="docs/images/loading_analys.jpeg" width="300" />
+<img src="docs/images/result.jpeg" width="300" />
+</p>
 
 ---
 
@@ -113,3 +115,4 @@ Fokus: Machine Learning, Computer Vision, Mobile Application Development
 ## 🌾 Penutup
 
 CekPadi diharapkan dapat menjadi langkah awal menuju pemanfaatan teknologi **Artificial Intelligence** dalam mendukung pertanian modern, khususnya dalam mendeteksi dan menangani penyakit tanaman padi secara lebih cepat dan akurat.
+
