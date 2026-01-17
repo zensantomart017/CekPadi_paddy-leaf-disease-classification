@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final file = File(picked.path);
 
+    if (!mounted) return;
     Navigator.pushNamed(
       context,
       '/analyzing',
@@ -36,7 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final hiName = globalUserName.isEmpty ? "there" : globalUserName;
-
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D0D),
       body: SafeArea(
@@ -62,28 +62,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                     const SizedBox(height: 4),
-                    Row(
-                      children: [
                         Text(
-                          "Hi, $hiName",
+                          "Hi, $hiName 👋",
                           style: const TextStyle(
                             color: Colors.green,
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(width: 6),
-                        const Text("👋", style: TextStyle(fontSize: 22)),
                       ],
                     ),
-                  ],
                 ),
-              ),
 
               const SizedBox(height: 100),
 
-              Center(
-                child: const Text(
+              const Center(
+                child: Text(
                   "CekPadi",
                   style: TextStyle(
                     fontSize: 22,
@@ -93,13 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
 
-
               const SizedBox(height: 24),
-
-              // Big card
-              GestureDetector(
-                onTap: () {},
-                child: Container(
+              
+              Container(
                   width: double.infinity,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
@@ -133,69 +123,58 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-              ),
 
               const SizedBox(height: 24),
 
-              GestureDetector(
+              _buildActionButton(
+                icon: Icons.camera_alt,
+                label: "Ambil Foto Langsung",
                 onTap: () => _pickImage(ImageSource.camera),
-                child: Container(
-                  width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF0D0D0D),
-                    borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Colors.green, width: 1.3),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.camera_alt, color: Colors.green),
-                      SizedBox(width: 12),
-                      Text(
-                        "Ambil Foto Langsung",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    ],
-                  ),
-                ),
               ),
 
               const SizedBox(height: 12),
 
-              GestureDetector(
+              _buildActionButton(
+                icon: Icons.photo_library_rounded,
+                label: "Pilih Dari Galeri",
                 onTap: () => _pickImage(ImageSource.gallery),
-                child: Container(
-                  width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF0D0D0D),
-                    borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Colors.green, width: 1.3),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.photo_library_rounded, color: Colors.green),
-                      SizedBox(width: 12),
-                      Text(
-                        "Pilih Dari Galeri",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActionButton({
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        decoration: BoxDecoration(
+          color: const Color(0xFF0D0D0D),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.green, width: 1.3),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, color: Colors.green),
+            const SizedBox(width: 12),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -14,6 +14,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   bool _enabled = false;
 
   @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _continue() async {
+    final name = _nameController.text.trim();
+    globalUserName = name;
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString("username", name);
+
+    if(!mounted) return;
+    Navigator.pushReplacementNamed(context, "/home");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D0D),
@@ -62,7 +79,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(height: 12),
 
                   Text(
-                    "Bantu Petani mengenali Jenis Penyakit Daun Padi 🌾",
+                    "Bantu Petani mengenali Jenis Penyakit Daun Padi",
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.grey.shade400,
@@ -113,23 +130,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: _enabled
-                          ? () async {
-                              final name = _nameController.text.trim();
-
-                              // simpan ke global
-                              globalUserName = name;
-
-                              // simpan ke SharedPreferences
-                              final prefs =
-                                  await SharedPreferences.getInstance();
-                              await prefs.setString("userName", name);
-
-                              // pindah langsung
-                              Navigator.pushReplacementNamed(context, '/home');
-                            }
-                          : null,
-
+                      onPressed: _enabled ? _continue : null,
 
                       style: ElevatedButton.styleFrom(
                         backgroundColor:

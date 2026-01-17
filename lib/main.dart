@@ -3,7 +3,6 @@ import 'screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/analyzing_screen.dart';
 import 'screens/result_screen.dart';
-import 'services/model_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 String globalUserName = "";
@@ -14,9 +13,7 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   globalUserName = prefs.getString("userName") ?? "";
 
-  runApp(MyApp(
-    hasName: globalUserName.isNotEmpty,
-  ));
+  runApp(MyApp(hasName: globalUserName.isNotEmpty));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,19 +25,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CekPadi',
-
       initialRoute: hasName ? '/home' : '/',
-
       routes: {
         '/': (context) => const WelcomeScreen(),
         '/home': (context) => const HomeScreen(),
         '/analyzing': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments as AnalyzingArgs;
+          final args =
+              ModalRoute.of(context)!.settings.arguments as AnalyzingArgs;
           return AnalyzingScreen(args: args);
         },
         '/result': (context) {
-          final args =
-              ModalRoute.of(context)!.settings.arguments as ResultArgs;
+          final args = ModalRoute.of(context)!.settings.arguments as ResultArgs;
           return ResultScreen(args: args);
         },
       },

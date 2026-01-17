@@ -5,7 +5,7 @@ class DiseaseInfo {
   final String? description;
   final List<String> prevention;
   final List<String> treatment;
-  final String normalizedName;
+  // final String normalizedName;
 
   DiseaseInfo({
     required this.id,
@@ -15,7 +15,7 @@ class DiseaseInfo {
     required this.prevention,
     required this.treatment,
     String? normalizedName,
-  }) : normalizedName = normalizedName ?? labelsName.toLowerCase().trim();
+  });
 
   factory DiseaseInfo.fromJson(Map<String, dynamic> json) {
     return DiseaseInfo(

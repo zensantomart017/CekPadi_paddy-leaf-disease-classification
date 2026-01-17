@@ -15,34 +15,17 @@ class DiseaseRepository {
     final jsonStr = await rootBundle.loadString('assets/data/response.json');
     final List data = json.decode(jsonStr);
 
-    _diseases = data.map((e) {
-      final temp = DiseaseInfo.fromJson(e);
-
-      // Tambahkan normalizedName tanpa bikin object baru
-      return DiseaseInfo(
-        id: temp.id,
-        name: temp.name,
-        labelsName: temp.labelsName,
-        description: temp.description,
-        prevention: temp.prevention,
-        treatment: temp.treatment,
-        normalizedName: temp.labelsName
-            .toLowerCase()
-            .trim(),
-      );
-    }).toList();
-
+    _diseases = data.map((e) => DiseaseInfo.fromJson(e)).toList();
     _loaded = true;
   }
 
-  // BARU: Cari berdasarkan label dari model
   Future<DiseaseInfo?> getByLabel(String labelFromModel) async {
     await _load();
 
     final normalized = labelFromModel.toLowerCase().trim();
 
     try {
-      return _diseases .firstWhere((d) =>
+      return _diseases.firstWhere((d) =>
           d.labelsName.toLowerCase().trim() == normalized ||
           d.name.toLowerCase().trim() == normalized);
     } catch (e) {
@@ -50,7 +33,6 @@ class DiseaseRepository {
     }
   }
 
-  // Tetap pertahankan getById kalau perlu
   Future<DiseaseInfo?> getById(int id) async {
     await _load();
     try {

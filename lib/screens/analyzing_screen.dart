@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import '../services/model_service.dart';
 import '../services/disease_repository.dart';
@@ -30,16 +29,13 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> {
     final file = widget.args.imageFile;
 
     setState(() => step1 = true);
+    final prediction = await ModelService.instance.predict(file);
 
-    final prediction =
-        await ModelService.instance.predict(file);
-    setState(() => step2 = true); // detecting leaf features
+    setState(() => step2 = true);
+    final info = await DiseaseRepository.instance.getByLabel(prediction.labelId);
 
-    final info = await DiseaseRepository.instance
-        .getByLabel(prediction.labelId);
-    setState(() => step3 = true); // identifying diseases
-
-    setState(() => step4 = true); // generating recommendations
+    setState(() => step3 = true);
+    setState(() => step4 = true);
 
     // sedikit delay biar user sempat lihat status
     await Future.delayed(const Duration(milliseconds: 600));
@@ -57,36 +53,12 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> {
     );
   }
 
-  Widget _buildStep(String text, bool done) {
-    return Row(
-      children: [
-        Icon(
-          done ? Icons.check_circle_rounded : Icons.radio_button_unchecked,
-          color: done ? Colors.green : Colors.grey,
-          size: 20,
-        ),
-        const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: done ? Colors.green : Colors.grey.shade400,
-              fontSize: 14,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final file = widget.args.imageFile;
-
     return Scaffold(
-      backgroundColor: Color(0xFF0D0D0D),
+      backgroundColor: const Color(0xFF0D0D0D),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0D0D0D),
+        backgroundColor: const Color(0xFF0D0D0D),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
@@ -107,7 +79,7 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.file(
-                  file,
+                  widget.args.imageFile,
                   height: 200,
                   width: 200,
                   fit: BoxFit.cover,
@@ -119,7 +91,8 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> {
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    color: Colors.white
+                    ),
               ),
               const SizedBox(height: 8),
               Text(
@@ -148,6 +121,28 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> {
           ),
         ),
       ),
+    );
+  }
+
+    Widget _buildStep(String text, bool done) {
+    return Row(
+      children: [
+        Icon(
+          done ? Icons.check_circle_rounded : Icons.radio_button_unchecked,
+          color: done ? Colors.green : Colors.grey,
+          size: 20,
+        ),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: done ? Colors.green : Colors.grey.shade400,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
