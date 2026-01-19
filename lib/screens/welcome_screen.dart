@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     globalUserName = name;
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString("username", name);
+    await prefs.setString("userName", name);
 
     if(!mounted) return;
     Navigator.pushReplacementNamed(context, "/home");
