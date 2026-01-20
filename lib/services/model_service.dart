@@ -205,7 +205,7 @@ class ModelService {
     debugPrint("    Very dark: ${(darkRatio * 100).toStringAsFixed(1)}%");
     debugPrint("    Has color: ${(colorRatio * 100).toStringAsFixed(1)}%");
 
-    if (brightRatio > 0.75) {
+    if (brightRatio > 0.85) {
       return ValidationResult(false, "Too much white/bright");
     }
 
@@ -213,7 +213,7 @@ class ModelService {
       return ValidationResult(false, "Too much black/dark");
     }
 
-    if (colorRatio < 0.12) {
+    if (colorRatio < 0.08) {
       return ValidationResult(false, "Insufficient color variation");
     }
 
@@ -288,7 +288,7 @@ class ModelService {
       return ValidationResult(false, "Too much skin tone detected");
     }
 
-    if (organicRatio < 0.15) {
+    if (organicRatio < 0.10) {
       return ValidationResult(false, "Insufficient organic features");
     }
 
